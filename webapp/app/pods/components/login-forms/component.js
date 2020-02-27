@@ -24,11 +24,15 @@ export default Component.extend({
   discordLoginEnabled: computed('providerIds', function() {
     return this.providerIds.includes('discord');
   }),
+  microsoftLoginEnabled: computed('providerIds', function() {
+    return this.providerIds.includes('microsoft');
+  }),
 
   googleUrl: computed(() => `${config.API.AUTHENTICATION_PATH}/google`),
   githubUrl: computed(() => `${config.API.AUTHENTICATION_PATH}/github`),
   slackUrl: computed(() => `${config.API.AUTHENTICATION_PATH}/slack`),
   discordUrl: computed(() => `${config.API.AUTHENTICATION_PATH}/discord`),
+  microsoftUrl: computed(() => `${config.API.AUTHENTICATION_PATH}/microsoft`),
   dummyUrl: computed('username', function() {
     return `${
       config.API.AUTHENTICATION_PATH

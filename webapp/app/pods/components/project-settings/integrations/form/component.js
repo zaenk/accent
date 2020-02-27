@@ -20,7 +20,7 @@ export default Component.extend({
   defaultRef: reads('integration.data.defaultRef'),
   token: reads('integration.data.token'),
 
-  services: ['DISCORD', 'SLACK', 'GITHUB'],
+  services: ['DISCORD', 'SLACK', 'GITHUB', 'MICROSOFT'],
 
   service: computed('integration', 'services.[]', function() {
     return this.integration.service || this.services[0];

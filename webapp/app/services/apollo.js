@@ -28,7 +28,8 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
           possibleTypes: [
             'ProjectIntegrationDiscord',
             'ProjectIntegrationSlack',
-            'ProjectIntegrationGitHub'
+            'ProjectIntegrationGitHub',
+            'ProjectIntegrationMicrosoft'
           ]
         }
       ]

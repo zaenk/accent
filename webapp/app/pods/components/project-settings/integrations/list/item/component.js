@@ -4,7 +4,8 @@ import Component from '@ember/component';
 const LOGOS = {
   DISCORD: 'assets/services/discord.svg',
   GITHUB: 'assets/services/github.svg',
-  SLACK: 'assets/services/slack.svg'
+  SLACK: 'assets/services/slack.svg',
+  MICROSOFT: 'assets/services/microsoft.svg'
 };
 
 // Attributes

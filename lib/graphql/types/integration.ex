@@ -5,6 +5,7 @@ defmodule Accent.GraphQL.Types.Integration do
     value(:slack, as: "slack")
     value(:discord, as: "discord")
     value(:github, as: "github")
+    value(:microsoft, as: "microsoft")
   end
 
   enum :project_integration_event do
@@ -20,6 +21,7 @@ defmodule Accent.GraphQL.Types.Integration do
       %{service: "discord"}, _ -> :project_integration_discord
       %{service: "slack"}, _ -> :project_integration_slack
       %{service: "github"}, _ -> :project_integration_git_hub
+      %{service: "microsoft"}, _ -> :project_integration_microsoft
     end)
   end
 
@@ -49,6 +51,15 @@ defmodule Accent.GraphQL.Types.Integration do
 
     interfaces([:project_integration])
   end
+  
+  object :project_integration_microsoft do
+    field(:id, non_null(:id))
+    field(:service, non_null(:project_integration_service))
+    field(:events, non_null(list_of(non_null(:project_integration_event))))
+    field(:data, non_null(:project_integration_microsoft_data))
+
+    interfaces([:project_integration])
+  end
 
   object :project_integration_slack_data do
     field(:id, non_null(:id))
@@ -60,5 +71,9 @@ defmodule Accent.GraphQL.Types.Integration do
     field(:repository, non_null(:string))
     field(:token, non_null(:string))
     field(:default_ref, non_null(:string))
+  end
+  
+  object :project_integration_microsoft_data do
+    field(:id, non_null(:id))
   end
 end

@@ -36,6 +36,12 @@ export default gql`
               defaultRef
             }
           }
+
+          ... on ProjectIntegrationMicrosoft {
+            data {
+              id
+            }
+          }
         }
       }
     }
